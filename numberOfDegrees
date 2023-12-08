@@ -1,0 +1,32 @@
+file = open("CapstoneConnections.txt", 'r')
+
+# store content of the file in a variable
+numOfLines = 0
+count = [0]*247
+d = 0
+#degree = []
+for line in file:
+    data = line.strip().split(",")
+    num1 = int(data[0])
+    num2 = int(data[1])
+    count[num1-1]+=1
+    count[num2-1]+=1
+   
+print(count)
+
+for i in range(247):
+    d = d+count[i]
+print()
+print(d)
+print(d/248)
+print()
+#for i in range (len(count)):
+    #if count[i] ==0:
+        #print(i)
+#print()
+for i in range (15):
+    total = count.count(i)
+    numOfLines = numOfLines+total
+    print(total, total/247, "%")
+print(numOfLines)
+file.close()
